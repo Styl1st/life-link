@@ -1,5 +1,6 @@
 import { useStatus } from './StatusContext'; // Import the useStatus hook
-import { IonToolbar, IonTitle, IonButton } from '@ionic/react';
+import { IonToolbar, IonTitle, IonButton, IonIcon } from '@ionic/react';
+import { checkmarkCircleOutline, alertCircleOutline, closeCircleOutline } from 'ionicons/icons'; // Import the icons
 import { useState } from 'react'; // Import the useState hook
 
 const StatusBar: React.FC = () => {
@@ -26,18 +27,21 @@ const StatusBar: React.FC = () => {
         color={activeButton === 'Available' ? 'success' : 'medium'} 
         onClick={() => { setStatus('Available'); setActiveButton('Available'); }}
       >
+        <IonIcon icon={checkmarkCircleOutline} /> {/* Add the icon */}
         Available
       </IonButton> {/* Green button if active, default color otherwise */}
       <IonButton 
         color={activeButton === 'In Mission' ? 'warning' : 'medium'} 
         onClick={() => { setStatus('In Mission'); setActiveButton('In Mission'); }}
       >
+        <IonIcon icon={alertCircleOutline} /> {/* Add the icon */}
         In Mission
       </IonButton> {/* Yellow button if active, default color otherwise */}
       <IonButton 
         color={activeButton === 'Occupied' ? 'danger' : 'medium'} 
         onClick={() => { setStatus('Occupied'); setActiveButton('Occupied'); }}
       >
+        <IonIcon icon={closeCircleOutline} /> {/* Add the icon */}
         Occupied
       </IonButton> {/* Red button if active, default color otherwise */}
     </IonToolbar>

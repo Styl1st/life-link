@@ -1,0 +1,8 @@
+{
+  "name": "LifeLink",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite",
+  "id": "ab272fa4"
+}

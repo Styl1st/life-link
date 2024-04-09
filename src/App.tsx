@@ -32,27 +32,27 @@ const App: React.FC = () => {
     <IonApp>
       <IonReactRouter>
         <StatusProvider> {/* Wrap your application in the StatusProvider */}
-          <IonSplitPane contentId="main">
-            <Menu />
-            <IonRouterOutlet id="main">
-              <Route path="/" exact={true}>
-                <Redirect to="/folder/Inbox" />
-              </Route>
-              <Route path="/folder/:name" exact={true}>
-                <Page />
-              </Route>
-            </IonRouterOutlet>
+          <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}> {/* Inline styles */}
+            <IonSplitPane contentId="main">
+              <Menu />
+              <IonRouterOutlet id="main">
+                <Route path="/" exact={true}>
+                  <Redirect to="/folder/Inbox" />
+                </Route>
+                <Route path="/folder/:name" exact={true}>
+                  <Page />
+                </Route>
+              </IonRouterOutlet>
+            </IonSplitPane>
             <div style={{ 
-              position: 'fixed', 
-              bottom: 0, 
-              width: '100%', 
               display: 'flex', 
-              justifyContent: 'center', 
-              zIndex: 1 
+              justifyContent: 'center',
+              alignItems: 'flex-end',
+              height: '1000px', 
             }}> {/* Inline styles */}
               <StatusBar /> {/* Include the StatusBar */}
             </div>
-          </IonSplitPane>
+          </div>
         </StatusProvider>
       </IonReactRouter>
     </IonApp>
